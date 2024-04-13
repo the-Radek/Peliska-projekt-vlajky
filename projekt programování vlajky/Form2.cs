@@ -5,9 +5,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Markup;
 
 namespace projekt_programování_vlajky
 {
@@ -19,6 +22,7 @@ namespace projekt_programování_vlajky
         ColorDialog colorDialog1 = new System.Windows.Forms.ColorDialog();
         List<System.Windows.Forms.Button> seznam = new List<System.Windows.Forms.Button>();
         int i = 0;
+        int score = 0;
 
 
         public Form2()
@@ -63,7 +67,6 @@ namespace projekt_programování_vlajky
                     int j = 0;
                     foreach (System.Windows.Forms.Button item in seznam)
                     {
-                        item.Top = 300;
                         item.Left = 550 + j * 30;
                         j++;
                     }
@@ -100,37 +103,13 @@ namespace projekt_programování_vlajky
             //flagPaths = Values.FlagPaths.ToDictionary(entry => entry.Key, entry => entry.Value);
         }
 
-        private void LoadColorFlagPaths()
-        {
-            colorFlagPaths.Add("Velká Británie", @"barevne_vlajky\img1.png");
-            colorFlagPaths.Add("Česká republika", @"barevne_vlajky\img2.png");
-            colorFlagPaths.Add("Rakousko", @"barevne_vlajky\img3.png");
-            colorFlagPaths.Add("Dánsko", @"barevne_vlajky\img4.png");
-            colorFlagPaths.Add("Francie", @"barevne_vlajky\img5.png");
-            colorFlagPaths.Add("Řecko", @"barevne_vlajky\img6.png");
-            colorFlagPaths.Add("Makedonie", @"barevne_vlajky\img7.png");
-            colorFlagPaths.Add("Kanada", @"barevne_vlajky\img8.png");
-            colorFlagPaths.Add("Itálie", @"barevne_vlajky\img9.png");
-            colorFlagPaths.Add("Nizozemsko", @"barevne_vlajky\img10.png");
-            colorFlagPaths.Add("Lucembursko", @"barevne_vlajky\img11.png");
-            colorFlagPaths.Add("Litva", @"barevne_vlajky\img12.png");
-            colorFlagPaths.Add("Rusko", @"barevne_vlajky\img13.png");
-            colorFlagPaths.Add("Rumunsko", @"barevne_vlajky\img14.png");
-            colorFlagPaths.Add("Španělsko", @"barevne_vlajky\img15.png");
-            colorFlagPaths.Add("Švédsko", @"barevne_vlajky\img16.png");
-            colorFlagPaths.Add("Švýcarsko", @"barevne_vlajky\img17.png");
-
-            //// alternativně přes třídu Values
-            //colorFlagPaths = Values.ColorFlagPaths.ToDictionary(entry => entry.Key, entry => entry.Value);
-        }
-
 
         private Random random = new Random();
         private void ShowRandomFlag()
         {
             if (flagPaths.Count == 0)
             {
-                MessageBox.Show("Všechny vlajky již byly zobrazeny, hra končí!");
+                MessageBox.Show("Všechny vlajky již byly zobrazeny, hra končí!\nTvoje skóre je " + score.ToString());
                 return;
             }
 
@@ -143,6 +122,8 @@ namespace projekt_programování_vlajky
             pictureBox7.Image = Image.FromFile(imagePath);
             label5.Text = countryName;
             label7.Text = "";
+            label9.Text = score.ToString();
+            label10.Text = "";
 
             // Odstranění zobrazené vlajky ze slovníku
             flagPaths.Remove(countryName);
@@ -196,8 +177,11 @@ namespace projekt_programování_vlajky
 
             // Vyčistí seznam barev
             this.seznam.Clear();
-
             i = 0;
+
+            // Povolí check tlačítko
+            button4.Enabled = true;
+
             buttonNext_Click(sender, e);
         }
         private void buttonNext_Click(object sender, EventArgs e)
@@ -227,12 +211,26 @@ namespace projekt_programování_vlajky
 
             if (correct)
             {
-                MessageBox.Show("gg well played"); // TODO změnit text / přidat jinou funkcionalitu
+                // přidá skóre
+                score++;
+                label9.Text = score.ToString();
+                // vypíše zprávu do labelu a změnní barvu
+                label10.Text = "good";
+                label10.ForeColor = Color.FromArgb(119, 221, 118);
             }
             else
             {
-                MessageBox.Show("pěkně trapný"); // TODO změnit text
+                // vypíše zprávu do labelu a změnní barvu
+                label10.Text = "bad";
+                label10.ForeColor = Color.FromArgb(255, 105, 97);
             }
+
+            // Obarví vlajku
+            string colorFlagPath = Values.ColorFlagPaths[label5.Text];
+            pictureBox7.Image = Image.FromFile(colorFlagPath);
+
+            // Zakáže check tlačítko
+            button4.Enabled = false;
         }
 
     }

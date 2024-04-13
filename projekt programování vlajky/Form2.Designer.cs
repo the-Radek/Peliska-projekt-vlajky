@@ -41,6 +41,9 @@
             button3 = new Button();
             button4 = new Button();
             label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
@@ -184,12 +187,50 @@
             label7.AutoSize = true;
             label7.BackColor = SystemColors.ActiveCaptionText;
             label7.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.ForeColor = Color.FromArgb(255, 255, 128);
+            label7.ForeColor = Color.Plum;
             label7.Location = new Point(615, 333);
             label7.Name = "label7";
             label7.Size = new Size(65, 21);
             label7.TabIndex = 17;
             label7.Text = "label7";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = SystemColors.ActiveCaptionText;
+            label8.Font = new Font("Rockwell", 16.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.FromArgb(255, 192, 128);
+            label8.Location = new Point(342, 21);
+            label8.Name = "label8";
+            label8.Size = new Size(76, 25);
+            label8.TabIndex = 18;
+            label8.Text = "Score:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = SystemColors.ActiveCaptionText;
+            label9.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = Color.FromArgb(255, 255, 128);
+            label9.Location = new Point(436, 24);
+            label9.Name = "label9";
+            label9.Size = new Size(65, 21);
+            label9.TabIndex = 19;
+            label9.Text = "label9";
+            label9.TextAlign = ContentAlignment.TopRight;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = SystemColors.ActiveCaptionText;
+            label10.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.ForeColor = Color.FromArgb(255, 255, 128);
+            label10.Location = new Point(507, 25);
+            label10.Name = "label10";
+            label10.Size = new Size(75, 21);
+            label10.TabIndex = 20;
+            label10.Text = "label10";
+            label10.TextAlign = ContentAlignment.TopRight;
             // 
             // Form2
             // 
@@ -197,6 +238,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(800, 450);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -232,5 +276,8 @@
         private Button button3;
         private Button button4;
         private Label label7;
+        private Label label8;
+        private Label label9;
+        private Label label10;
     }
 }
