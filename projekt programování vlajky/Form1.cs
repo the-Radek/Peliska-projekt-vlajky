@@ -22,18 +22,24 @@ namespace projekt_programování_vlajky
 
             // Skryjte Form1
             this.Hide();
+
+            // Zobrazí Form1 při zavření Form2
+            form2.Closed += (s, args) => this.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Vytvořte novou instanci Form2
+            // Vytvořte novou instanci Form3
             Form3 form3 = new Form3();
 
-            // Zobrazte Form2
+            // Zobrazte Form3
             form3.Show();
 
             // Skryjte Form1
             this.Hide();
+
+            // Zobrazí Form1 při zavření Form3
+            form3.Closed += (s, args) => this.Show();
         }
     }
 }

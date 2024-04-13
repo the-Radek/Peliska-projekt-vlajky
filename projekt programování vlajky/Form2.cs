@@ -30,12 +30,48 @@ namespace projekt_programování_vlajky
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
+                // Pokud brava není předdefinovaná
+                if (!Values.ColorNames.ContainsKey(colorDialog1.Color.Name))
+                {
+                    MessageBox.Show("pls selektni nějakou definovanou barvu"); // TODO změnit text
+                    //MessageBox.Show(colorDialog1.Color.Name); // Vypíše nepřeložený "název" barvy
+                    return;
+                }
+
                 System.Windows.Forms.Button b = new System.Windows.Forms.Button();
                 b.BackColor = colorDialog1.Color;
                 b.Top = 300;
                 b.Left = 550 + i * 30;
                 seznam.Add(b);
                 this.Controls.Add(seznam[i]);
+
+                // Přidá na tlačítko funkcionalitu
+                b.Click += (object? sender, EventArgs e) => {
+                    //MessageBox.Show(Values.ColorNames[b.BackColor.Name]); // Vypíše název barvy
+                    // Pokud je tlačítko poslední smaže text
+                    if (seznam.IndexOf(b) == i - 1)
+                        label7.Text = "";
+
+                    // Smaže tlačítko z formuláře
+                    this.Controls.Remove(b);
+                    // Smaže tlačítko ze seznamu
+                    seznam.Remove(b);
+                    // Sníží čítač
+                    i--;
+
+                    // Přeskládá barvičky vedle sebe
+                    int j = 0;
+                    foreach (System.Windows.Forms.Button item in seznam)
+                    {
+                        item.Top = 300;
+                        item.Left = 550 + j * 30;
+                        j++;
+                    }
+                };
+
+                // Zobrazí název barvy
+                label7.Text = Values.ColorNames[b.BackColor.Name];
+
                 i++;
             }
         }
@@ -59,6 +95,9 @@ namespace projekt_programování_vlajky
             flagPaths.Add("Španělsko", @"vlajky\img15.jpg");
             flagPaths.Add("Švédsko", @"vlajky\img16.jpg");
             flagPaths.Add("Švýcarsko", @"vlajky\img17.jpg");
+
+            //// alternativně přes třídu Values
+            //flagPaths = Values.FlagPaths.ToDictionary(entry => entry.Key, entry => entry.Value);
         }
 
         private void LoadColorFlagPaths()
@@ -81,6 +120,8 @@ namespace projekt_programování_vlajky
             colorFlagPaths.Add("Švédsko", @"barevne_vlajky\img16.png");
             colorFlagPaths.Add("Švýcarsko", @"barevne_vlajky\img17.png");
 
+            //// alternativně přes třídu Values
+            //colorFlagPaths = Values.ColorFlagPaths.ToDictionary(entry => entry.Key, entry => entry.Value);
         }
 
 
@@ -101,6 +142,7 @@ namespace projekt_programování_vlajky
 
             pictureBox7.Image = Image.FromFile(imagePath);
             label5.Text = countryName;
+            label7.Text = "";
 
             // Odstranění zobrazené vlajky ze slovníku
             flagPaths.Remove(countryName);
@@ -139,16 +181,8 @@ namespace projekt_programování_vlajky
 
         private void button1_Click(object sender, EventArgs e)
         {
-            {
-                // Vytvořte novou instanci Form2
-                Form1 form1 = new Form1();
-
-                // Zobrazte Form2
-                form1.Show();
-
-                // Skryjte Form1
-                this.Hide();
-            }
+            // Zavře Form2
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -159,6 +193,10 @@ namespace projekt_programování_vlajky
                 this.Controls.Remove(item);
 
             }
+
+            // Vyčistí seznam barev
+            this.seznam.Clear();
+
             i = 0;
             buttonNext_Click(sender, e);
         }
@@ -170,8 +208,32 @@ namespace projekt_programování_vlajky
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            bool correct = false;
+
+            // Pokud se délka pole barviček rovná délce pole referenčního řešení, zkontroluj...
+            if (seznam.Count == Values.FlagColorList[label5.Text].Count())
+            {
+                correct = true;
+                // Pro každou barvu zkontroluj jestli je v referenčním řešení
+                foreach (System.Windows.Forms.Button item in seznam)
+                {
+                    if (!Values.FlagColorList[label5.Text].Contains(Values.ColorNames[item.BackColor.Name]))
+                    {
+                        correct = false;
+                        break;
+                    }
+                }
+            }
+
+            if (correct)
+            {
+                MessageBox.Show("gg well played"); // TODO změnit text / přidat jinou funkcionalitu
+            }
+            else
+            {
+                MessageBox.Show("pěkně trapný"); // TODO změnit text
+            }
         }
-       
+
     }
 }

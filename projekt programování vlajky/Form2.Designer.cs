@@ -29,180 +29,193 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            label4 = new Label();
+            label5 = new Label();
+            pictureBox7 = new PictureBox();
+            label6 = new Label();
+            button3 = new Button();
+            button4 = new Button();
+            label7 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(33, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Guess ";
+            label1.AutoSize = true;
+            label1.BackColor = SystemColors.ActiveCaptionText;
+            label1.Font = new Font("Rockwell", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(255, 192, 128);
+            label1.Location = new Point(33, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(56, 17);
+            label1.TabIndex = 0;
+            label1.Text = "Guess ";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label2.Location = new System.Drawing.Point(54, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "the colour";
+            label2.AutoSize = true;
+            label2.BackColor = SystemColors.ActiveCaptionText;
+            label2.Font = new Font("Rockwell", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(192, 192, 255);
+            label2.Location = new Point(54, 26);
+            label2.Name = "label2";
+            label2.Size = new Size(81, 17);
+            label2.TabIndex = 1;
+            label2.Text = "the colour";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label3.Location = new System.Drawing.Point(20, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "of the flag";
+            label3.AutoSize = true;
+            label3.BackColor = SystemColors.ActiveCaptionText;
+            label3.Font = new Font("Rockwell", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(255, 255, 128);
+            label3.Location = new Point(20, 43);
+            label3.Name = "label3";
+            label3.Size = new Size(78, 17);
+            label3.TabIndex = 2;
+            label3.Text = "of the flag";
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(703, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 46);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.BackColor = SystemColors.ActiveCaptionText;
+            button1.Font = new Font("Rockwell", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(703, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(85, 46);
+            button1.TabIndex = 3;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(312, 304);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(214, 50);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Click and choose colours";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.BackColor = Color.Black;
+            button2.Font = new Font("Rockwell", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(312, 304);
+            button2.Name = "button2";
+            button2.Size = new Size(214, 50);
+            button2.TabIndex = 4;
+            button2.Text = "Click and choose colours";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label4.Location = new System.Drawing.Point(212, 252);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(195, 21);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Name of the country:";
+            label4.AutoSize = true;
+            label4.BackColor = SystemColors.ActiveCaptionText;
+            label4.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.FromArgb(128, 128, 255);
+            label4.Location = new Point(212, 252);
+            label4.Name = "label4";
+            label4.Size = new Size(195, 21);
+            label4.TabIndex = 5;
+            label4.Text = "Name of the country:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label5.Location = new System.Drawing.Point(475, 252);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 21);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "label5";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            label5.AutoSize = true;
+            label5.BackColor = SystemColors.ActiveCaptionText;
+            label5.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.FromArgb(255, 255, 128);
+            label5.Location = new Point(475, 252);
+            label5.Name = "label5";
+            label5.Size = new Size(65, 21);
+            label5.TabIndex = 6;
+            label5.Text = "label5";
+            label5.Click += label5_Click;
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(345, 127);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(155, 101);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 13;
-            this.pictureBox7.TabStop = false;
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(345, 127);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(155, 101);
+            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox7.TabIndex = 13;
+            pictureBox7.TabStop = false;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Black;
-            this.label6.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.Plum;
-            this.label6.Location = new System.Drawing.Point(377, 77);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 21);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "The flag:";
+            label6.AutoSize = true;
+            label6.BackColor = Color.Black;
+            label6.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.Plum;
+            label6.Location = new Point(377, 77);
+            label6.Name = "label6";
+            label6.Size = new Size(88, 21);
+            label6.TabIndex = 14;
+            label6.Text = "The flag:";
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Black;
-            this.button3.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button3.Location = new System.Drawing.Point(436, 362);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 33);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Next";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.BackColor = Color.Black;
+            button3.Font = new Font("Rockwell", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.ForeColor = Color.FromArgb(255, 192, 128);
+            button3.Location = new Point(436, 362);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 33);
+            button3.TabIndex = 15;
+            button3.Text = "Next";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Black;
-            this.button4.Font = new System.Drawing.Font("Rockwell", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button4.Location = new System.Drawing.Point(345, 363);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(73, 32);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Check";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            button4.BackColor = Color.Black;
+            button4.Font = new Font("Rockwell", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            button4.ForeColor = Color.FromArgb(128, 128, 255);
+            button4.Location = new Point(345, 363);
+            button4.Name = "button4";
+            button4.Size = new Size(73, 32);
+            button4.TabIndex = 16;
+            button4.Text = "Check";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = SystemColors.ActiveCaptionText;
+            label7.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.FromArgb(255, 255, 128);
+            label7.Location = new Point(615, 333);
+            label7.Name = "label7";
+            label7.Size = new Size(65, 21);
+            label7.TabIndex = 17;
+            label7.Text = "label7";
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.ForeColor = System.Drawing.Color.White;
-            this.Name = "Form2";
-            this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 224, 192);
+            ClientSize = new Size(800, 450);
+            Controls.Add(label7);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(label6);
+            Controls.Add(pictureBox7);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            ForeColor = Color.White;
+            Name = "Form2";
+            Text = "Form2";
+            Load += Form2_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -218,5 +231,6 @@
         private Label label6;
         private Button button3;
         private Button button4;
+        private Label label7;
     }
 }

@@ -19,16 +19,8 @@ namespace projekt_programování_vlajky
 
         private void button1_Click(object sender, EventArgs e)
         {
-            {
-                // Vytvořte novou instanci Form2
-                Form1 form1 = new Form1();
-
-                // Zobrazte Form2
-                form1.Show();
-
-                // Skryjte Form1
-                this.Hide();
-            }
+            // Zavře Form3
+            this.Close();
         }
     }
 }
